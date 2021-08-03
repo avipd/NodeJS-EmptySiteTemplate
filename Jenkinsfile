@@ -18,5 +18,17 @@ pipeline {
       }
     }
 
+    stage('runing the app') {
+      steps {
+        sh 'npm start &'
+      }
+    }
+
+    stage('test the app') {
+      steps {
+        sh 'curl localhost:8080'
+      }
+    }
+
   }
 }
