@@ -32,7 +32,7 @@ pipeline {
 
     stage('Kill app') {
       steps {
-        sh 'pkill -f node'
+        sh 'sudo pkill -f node'
       }
     }
 
