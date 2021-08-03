@@ -42,6 +42,10 @@ pipeline {
         archiveArtifacts(artifacts: 'package.zip', onlyIfSuccessful: true)
       }
     }
-
+    stage('Notify') {
+      steps {
+        slackSend(channel: 'devops_kamatech', color: '#3EA652', message: "Success: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+      }
+    }
   }
 }
