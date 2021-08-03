@@ -36,5 +36,12 @@ pipeline {
       }
     }
 
+    stage('Package') {
+      steps {
+        sh 'zip -r package.zip .'
+        archiveArtifacts(artifacts: 'package.zip', onlyIfSuccessful: true)
+      }
+    }
+
   }
 }
