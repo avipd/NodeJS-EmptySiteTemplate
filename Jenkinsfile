@@ -43,5 +43,11 @@ pipeline {
       }
     }
 
+    stage('Notify Slack') {
+      steps {
+        slackSend(channel: 'devops_kamatech')
+      }
+    }
+
   }
 }
