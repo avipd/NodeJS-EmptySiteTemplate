@@ -32,7 +32,7 @@ pipeline {
 
     stage('Kill app') {
       steps {
-        sh 'sudo pkill -f node'
+        sh 'kill $(lsof -t -i:8080)'
       }
     }
 
