@@ -26,7 +26,7 @@ pipeline {
 
     stage('test the app') {
       steps {
-        sh 'sleep 10 && curl localhost:8080'
+        sh 'sleep 5 && curl localhost:8080'
       }
     }
 
